@@ -1,0 +1,49 @@
+\ProvidesPackage{style} 
+ \usepackage[utf8]{inputenc} 
+ \usepackage[ngerman]{babel} 
+ \usepackage[T1]{fontenc} 
+ \usepackage{mathtools} 
+ \usepackage{amsfonts} 
+ \usepackage{amssymb} 
+ \usepackage{graphicx} 
+ \usepackage[usenames,dvipsnames,svgnames,table]{xcolor} 
+ \usepackage{microtype} 
+ \usepackage{float} 
+ \usepackage{hyperref} 
+ \usepackage{booktabs} 
+ \usepackage{gensymb} 
+ \usepackage{parskip} 
+ \usepackage[xindy,toc]{glossaries} 
+ \usepackage[xindy]{imakeidx} 
+ \GlsSetXdyCodePage{duden-utf8} 
+ \makeglossaries 
+ \usepackage[toc,page]{appendix} 
+ \addto\captionsngerman{\let\appendixtocname\appendixname\let\appendixpagename\appendixname}
+\usepackage{listings} 
+\definecolor{dkgreen}{rgb}{0,0.6,0} 
+\definecolor{gray}{rgb}{0.5,0.5,0.5} 
+\definecolor{mauve}{rgb}{0.58,0,0.82} 
+\lstset{
+ frame=tb,
+ language=Java,
+ aboveskip=3mm,
+ belowskip=3mm,
+ showstringspaces=false,
+ columns=flexible,
+ basicstyle={\small\ttfamily},
+ numbers=none,
+ numberstyle=\tiny\color{gray},
+ keywordstyle=\color{blue},
+ commentstyle=\color{dkgreen},
+ stringstyle=\color{mauve},
+ breaklines=true,
+ breakatwhitespace=true,
+ tabsize=4,
+ captionpos=b,
+ numbers=left,
+ numbersep=10pt,
+ numberstyle=\tiny\color{gray}} 
+ % Parameters: 
+ % 1: Pfad zur Code Datei 
+ % 2: Text fuer die Caption 
+ \newcommand{\insertcode}[2]{\lstinputlisting[caption=#2,label=#1]{#1}}

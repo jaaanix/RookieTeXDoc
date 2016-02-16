@@ -1,0 +1,12 @@
+\documentclass[12pt]{article} 
+ \usepackage{style} 
+ \include{tex/glossary} 
+ \begin{document} 
+ \include{tex/title} 
+ \tableofcontents 
+ \listoffigures 
+ \include{tex/content} 
+ \glsaddall{} 
+ \setglossarystyle{altlist} 
+ \printglossaries{} 
+ \end{document}
