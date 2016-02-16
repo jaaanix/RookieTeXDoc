@@ -32,4 +32,26 @@
     \textbf{Weglassen falls genug Content.}
 
     \section{Aufbau eines Atom Packages}
-    \includegraphics[scale=1.0]{img/package_structure.png}
+    \begin{figure}
+        \includegraphics[scale=1.0]{img/package_structure.png}
+        \caption{Atom Package Struktur}
+    \end{figure}
+    Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern. Die für das RookieTeX Package wichtigsten Verzeichnisse sind \texttt{lib} und \texttt{snippets}. Im Verzeichnis \texttt{lib} befindet sich die Logik des Packages bestehend aus den Dateien:
+    \begin{tabular}{ | c | c | }
+      \hline
+      \texttt{ai-pack-view.coffee} & Einstiegpunkt des Packages \\
+      \hline
+      \texttt{ai-pack.js} & Deklaration von Command Palette Befehlen und Package Einstellungen \\
+      \hline
+      \texttt{converter.js} & Funktionen zur Konvertierung von Text in TeX \\
+      \hline
+      \texttt{generator.js} & Funktionen zur Generieung eines TeX Projekts \\
+      \hline
+      \texttt{templates.js} & Funktionen zur Generierung von TeX Elementen \\
+      \hline
+      \texttt{utils.js} & Hilfsfunktionen \\
+      \hline
+    \end{tabular}
+
+    Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese CoffeeScript Object Notation Datei beinhaltet jegliche Snippets des Packages, im Fall von RookieTeX also LaTeX Snippets. Die Snippets haben folgende Form:
+\insertcode{src/example_snippet.cson}{LaTeX Snippet Beispiel}

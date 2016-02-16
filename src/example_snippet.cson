@@ -1,0 +1,8 @@
+'TeX Unordered List':
+  'prefix': 'texlist'
+  'body': """
+    \\\\begin{itemize}
+      \\\\${1:item}
+      \\\\${2:item}
+    \\\\end{itemize}
+  """
