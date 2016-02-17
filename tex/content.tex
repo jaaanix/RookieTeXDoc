@@ -34,8 +34,49 @@
             TODO: screenshots
 
         \subsection{Konvertierung von Plain Text Listen}
-            Das RookieTeX Package bietet eine Konvertierung für geordnete und ungeordnete Listen, welche in Plain Text vorliegen an.
-            TODO: screenshots
+            Das RookieTeX Package bietet eine Konvertierung für geordnete und ungeordnete Listen, welche im Plain Text Format vorliegen an. Dazu wird eine Liste mit Spiegelstrichen oder nummerierter Aufzählung markiert und anschließend der Befehl \texttt{convertListToTex} aus der Command Palette aktiviert.
+            \\[5mm]
+            Konvertierung einer ungeordneten Liste: \\
+            \begin{minipage}[c]{0.45\textwidth}
+                \begin{itemize}
+                    \item[-] Bananen
+                    \item[-] Äpfel
+                    \item[-] Birnen
+                \end{itemize}
+            \end{minipage}
+            \begin{minipage}[c]{0.1\textwidth}
+                $\longrightarrow$
+            \end{minipage}
+            \begin{minipage}[c]{0.45\textwidth}
+                \texttt{\noindent
+                    \textbackslash{}begin\{itemize\} \\
+                    \textbackslash{}item Bananen \\
+                    \textbackslash{}item Äpfel \\
+                    \textbackslash{}item Birnen \\
+                    \textbackslash{}end\{itemize\}
+                }
+            \end{minipage}
+
+            Konvertierung einer geordneten Liste: \\
+            \begin{minipage}[c]{0.45\textwidth}
+                \begin{enumerate}
+                    \item Bananen
+                    \item Äpfel
+                    \item Birnen
+                \end{enumerate}
+            \end{minipage}
+            \begin{minipage}[c]{0.1\textwidth}
+                $\longrightarrow$
+            \end{minipage}
+            \begin{minipage}[c]{0.45\textwidth}
+                \texttt{\noindent
+                    \textbackslash{}begin\{enumerate\} \\
+                    \textbackslash{}item Bananen \\
+                    \textbackslash{}item Äpfel \\
+                    \textbackslash{}item Birnen \\
+                \textbackslash{}end\{enumerate\}
+                }
+            \end{minipage}
 
         \subsection{Formatierung/Konvertierung von Text}
             Das RookieTeX Package kann bereits vorhandenen ausgewählten Text fett, kursiv oder unterstrichen formatieren. Ist der Text markiert wird über die Command Palette die gewünschte Formatierung ausgewählt.
@@ -99,9 +140,13 @@
                 \hline
             \end{tabular}
         \end{minipage}
+        Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also \latex Snippets. Die Snippets haben folgende Form:
         \\[5mm]
-        Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript    Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also \latex Snippets. Die Snippets haben     folgende Form:
         \insertcode{src/example_snippet.cson}{\latex Snippet Beispiel (\latex Tabelle)}
+
+        Zeile 1 bennent das Snippet. Zeile 2 gibt das auslöende Prefix an, welches genutzt wird um das Snippet zu verwenden und Zeile 3 bis 8 spiegeln den bei Verwendung eingefügten Inhalt des Snippets wieder. Ein wichtiger Askpekt sind die in Zeile 5 und 6 zu sehenden Tab-Stops, welche nach dem Einfügen des Snippets body's dafür sorgen, dass der User mithilfe der Tab-Taste die Inhalte des \tex-Befehls füllen kann.
+        \\
+        Des Weiteren wird in dieser Datei festgelegt welche Art von Dateien die enthaltenen Snippets auslösen/triggern können oder auch welche \textit{Scopes} die Snippets verwenden können. Im konkreten Fall von RookieTex ist die Definition der unterstützten Formate/Scopes folgende: \texttt{'.text.plain, .text.latex':}. Es ist also bei der Bearbeitung von Plain Text oder \latex-Text möglich enthaltenen Snippets zu nutzen.
 
 \chapter{Aufbau eines \tex-Projekts}
     \section{Modulare Struktur eines \tex-Projekts}
