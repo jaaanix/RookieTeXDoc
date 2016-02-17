@@ -1,16 +1,16 @@
 \chapter{Latex}
-    \section{Der Ursprung von LaTeX}
-    Die Software TeX ist ein von Donald E. Knuth entwickletes System um Texte jeglicher Art, aber vor allem Wissenschaftliche Texte zu verfassen. Aufbauend auf der Basis-Software TeX entwickelt Leslie Lamport seit den 1980er Jahren eine Sammlung von TeX-Makros (genannt LaTeX). Diese Tex-Makros dienen hauptsächlich dazu, dass verfassen von Texten mit TeX zu vereinfachen.
+    \section{Der Ursprung von \latex}
+    Die Software \tex ist ein von Donald E. Knuth entwickletes System um Texte jeglicher Art, aber vor allem Wissenschaftliche Texte zu verfassen. Aufbauend auf der Basis-Software \tex entwickelt Leslie Lamport seit den 1980er Jahren eine Sammlung von \tex-Makros (genannt \latex). Diese Tex-Makros dienen hauptsächlich dazu, dass verfassen von Texten mit \tex zu vereinfachen.
 
     \section{WYSIWYG}
     WYSIWYG steht für What You See Is What You Get, dieses Prinzip beschreibt ein Verhalten von Textverarbeitungsprogrammen, in denen man schon während des Verfassens die finale Formatierung und das Aussehen des Textes zu sehen bekommt. Das bekannteste Beispiel für eine Software, welche nach diesem Prinzip funktioniert ist das Textverarbeitungsprogramm Microsoft Word.
 
-    TeX hingegen verzichtet auf diesen Ansatz. Genau wie bei der Auszeichnungssprache (markup language) HTML wird die Formatierung, Gliederung und das Aussehen des Produkts durch eine eigene Syntax abgebildet und ist mit dem Inhalt vermischt. Um das fertige Produkt, das Dokument zu erstellen, ist ein Kompiliervorgang nötig. Dieses Prinzip wird auch als WYSIWYAF (What You See Is What You Asked For) bezeichnet.
+    \tex hingegen verzichtet auf diesen Ansatz. Genau wie bei der Auszeichnungssprache (markup language) HTML wird die Formatierung, Gliederung und das Aussehen des Produkts durch eine eigene Syntax abgebildet und ist mit dem Inhalt vermischt. Um das fertige Produkt, das Dokument zu erstellen, ist ein Kompiliervorgang nötig. Dieses Prinzip wird auch als WYSIWYAF (What You See Is What You Asked For) bezeichnet.
 
-    \section{Haupteinsatzgebiete für TeX}
-    Besonders im naturwissenschaftlichen Bereich bietet sich die Auszeichnungssprache TeX an, da TeX eine komfortable Möglichkeit bietet Formeln oder Programmcode darzustellen. Ebenso lassen sich Abstände genau definieren (in Millimeter, Centimeter usw.), was ein häufig wichtiges Kriterium für Wissenschaftliche Arbeiten darstellt. TeX bietet sich für Bachelorarbeiten, Masterarbeiten, Dissertationen und andere Arbeiten welche mathematische Inhalte vermittelnan an.
+    \section{Haupteinsatzgebiete für \tex}
+    Besonders im naturwissenschaftlichen Bereich bietet sich die Auszeichnungssprache \tex an, da \tex eine komfortable Möglichkeit bietet Formeln oder Programmcode darzustellen. Ebenso lassen sich Abstände genau definieren (in Millimeter, Centimeter usw.), was ein häufig wichtiges Kriterium für Wissenschaftliche Arbeiten darstellt. \tex bietet sich für Bachelorarbeiten, Masterarbeiten, Dissertationen und andere Arbeiten welche mathematische Inhalte vermittelnan an.
 
-    Weitere komfortable und professionelle Möglichkeiten bietet TeX unter anderem zum erstellen von Inhaltsverzeichnisses, Abbildungsverzeichnissen, Tabellenverzeichnissen, Literaturverzeichnissen und Glossaren.
+    Weitere komfortable und professionelle Möglichkeiten bietet \tex unter anderem zum erstellen von Inhaltsverzeichnisses, Abbildungsverzeichnissen, Tabellenverzeichnissen, Literaturverzeichnissen und Glossaren.
 
 \chapter{Atom}
     \section{Atom der hackable Text Editor}
@@ -20,17 +20,17 @@
 
 \chapter{Atom Packages}
     \section{Nutzen und Einsatzgebiet von RookieTeX}
-    Das Package RookieTeX dient dazu, Verfassern von TeX-Dokumenten die Erstellung von Dokumenten zu erleichtern. Der Atom Text-Editor soll in Verbindung mit dem Package folgende Funktionalitäten bieten.
+    Das Package RookieTeX dient dazu, Verfassern von \tex-Dokumenten die Erstellung von Dokumenten zu erleichtern. Der Atom Text-Editor soll in Verbindung mit dem Package folgende Funktionalitäten bieten.
 
     \begin{itemize}
-        \item Anlegen eines TeX-Projekts mit einer wartungsfreundlichen Verzeichnis- und Dateistruktur.
+        \item Anlegen eines \tex-Projekts mit einer wartungsfreundlichen Verzeichnis- und Dateistruktur.
         \item Optionale Generierung von Glossar und Vorlage zum einfügen von Code durch Package Einstellungen.
         \item Sammlung von Snippets, die entweder im Editor direkt oder durch die Command Palette eingefügt werden können.
         \item Konvertierung/Formatierung von bereits vorhandenem Text
     \end{itemize}
 
     \section{Funktionalitäten von RookieTeX}
-        \subsection{Generieung eines LaTeX-Projekts}
+        \subsection{Generieung eines \latex -Projekts}
             TODO: screenshots
 
         \subsection{Konvertierung von Plain Text Listen}
@@ -47,7 +47,7 @@
             \begin{minipage}{\textwidth}
                 \begin{tabular}{ | l | l | }
                     \hline
-                    \textbf{Plain Text} & \textbf{LaTeX Code} \\
+                    \textbf{Plain Text} & \textbf{\latex Code} \\
                     \hline
                     fetter Text & \texttt{\textbackslash textbf\{fetter Text\}} \\
                     kursiver Text & \texttt{\textbackslash textit\{kursiver Text\}} \\
@@ -58,6 +58,11 @@
             TODO: screenshots
 
         \subsection{Nutzung von Snippets über die Command Palette}
+            Neben der Aktivierung von Snippets mithilfe der Standardfunktionalität von Atom, also in dem spezifische Snippet Prefix eingetippt wird, bietet RookieTeX die Möglichkeit Snippets über die Command Palette einzufügen. Die Command Palette dient dazu Befehle an den Editor abzusetzen. Durch bestimmte Befehle ermöglicht das Package nun \latex Snippets in den aktiven Editor-Tab an stelle des Cursors einzufügen.
+            \begin{figure}[H]
+                \includegraphics[scale=0.5]{img/snippets_via_cp.png}
+                \caption{Snippet via Command Palette einfügen}
+            \end{figure}
             TODO: screenshots
 
     \section{Entscheidung für die Entwicklung mit JavaScript}
@@ -77,27 +82,27 @@
       \hline
       \texttt{ai-pack.js} & Deklaration von Command Palette Befehlen und Package Einstellungen \\
       \hline
-      \texttt{converter.js} & Funktionen zur Konvertierung von Text in TeX \\
+      \texttt{converter.js} & Funktionen zur Konvertierung von Text in \tex \\
       \hline
-      \texttt{generator.js} & Funktionen zur Generieung eines TeX Projekts \\
+      \texttt{generator.js} & Funktionen zur Generieung eines \tex Projekts \\
       \hline
-      \texttt{templates.js} & Funktionen zur Generierung von TeX Elementen \\
+      \texttt{templates.js} & Funktionen zur Generierung von \tex Elementen \\
       \hline
       \texttt{utils.js} & Hilfsfunktionen \\
       \hline
     \end{tabular}
 
-    Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also LaTeX Snippets. Die Snippets haben folgende Form:
-    \insertcode{src/example_snippet.cson}{LaTeX Snippet Beispiel (LaTeX Tabelle)}
+    Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also \latex Snippets. Die Snippets haben folgende Form:
+    \insertcode{src/example_snippet.cson}{\latex Snippet Beispiel (\latex Tabelle)}
 
-\chapter{Aufbau eines TeX Projekts}
-    \section{Modulare Struktur eines TeX Projekts}
-    Um die Erstellung eines TeX Projekts zu erleichtern, bietet es sich an eine modulare Struktur, also einen bestimmten Aufbau des Projekts zu nutzen. Es ist sinnvoll Dinge mit unterschiedlicher Semantik voneinander zu trennen. Zum Beispiel sollte sich ein Deckblatt oder ein Glossar nicht in der selben \texttt{.tex} Datei befinden wie der eigentliche Inhalt des im Projekt behandelten Themas. Des Weiteren sollten Projketübergreifende Einstellungen wie genutzte LaTeX Packages oder Seitenabstände in einer \texttt{.sty} Datei zusammengefasst sein. Diese Vorgehensweise hat den Vorteil das besonders in umfangreichen Projekten die Übersicht gewährleistet wird. In den \texttt{.tex} Dateien die den eigentlichen Inhalt des zu erstellenden Dokuments beinhalten, kann sich so hauptsächlich auf das schreiben von Text konzentriert werden.
+\chapter{Aufbau eines \tex Projekts}
+    \section{Modulare Struktur eines \tex Projekts}
+    Um die Erstellung eines \tex Projekts zu erleichtern, bietet es sich an eine modulare Struktur, also einen bestimmten Aufbau des Projekts zu nutzen. Es ist sinnvoll Dinge mit unterschiedlicher Semantik voneinander zu trennen. Zum Beispiel sollte sich ein Deckblatt oder ein Glossar nicht in der selben \texttt{.tex} Datei befinden wie der eigentliche Inhalt des im Projekt behandelten Themas. Des Weiteren sollten Projketübergreifende Einstellungen wie genutzte \latex Packages oder Seitenabstände in einer \texttt{.sty} Datei zusammengefasst sein. Diese Vorgehensweise hat den Vorteil das besonders in umfangreichen Projekten die Übersicht gewährleistet wird. In den \texttt{.tex} Dateien die den eigentlichen Inhalt des zu erstellenden Dokuments beinhalten, kann sich so hauptsächlich auf das schreiben von Text konzentriert werden.
 
-    TeX liefert verschiedene Möglichkeiten zum auslagern und modularisieren von TeX-Komponenten. Als Basisfunktion kann der LaTeX-Befehl \texttt{\\include} gennant werden, welcher dazu dient verschiedene \texttt{.tex} Dateien in einer Datei zusammenzuführen. Der LaTeX-Compiler sorgt dann automatisch dafür, dass alle \texttt{.tex} Dateien in der angegebenen Reihenfolge kompiliert werden. Diese Funktionalität arbeitet sowohl auf einer Verzeichnisebene, als auch Verzeichnisübergreifend.
+    \tex liefert verschiedene Möglichkeiten zum auslagern und modularisieren von \tex -Komponenten. Als Basisfunktion kann der \latex-Befehl \texttt{\\include} gennant werden, welcher dazu dient verschiedene \texttt{.tex} Dateien in einer Datei zusammenzuführen. Der \latex-Compiler sorgt dann automatisch dafür, dass alle \texttt{.tex} Dateien in der angegebenen Reihenfolge kompiliert werden. Diese Funktionalität arbeitet sowohl auf einer Verzeichnisebene, als auch Verzeichnisübergreifend.
 
 \chapter{Implementierung}
-    \section{Implementierung der Generieung eines LaTeX-Projekts}
+    \section{Implementierung der Generieung eines \latex-Projekts}
         TODO: Erklärung
     \section{Implementierung der Konvertierung von Plain Text Listen}
         TODO: Erklärung
