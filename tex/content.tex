@@ -31,12 +31,24 @@
 
     \section{Funktionalitäten von RookieTeX}
         \subsection{Generieung eines \latex-Projekts}
-            TODO: screenshots
+            Bei der Generierung eines \latex-Projekts (\texttt{InitializeTexProject}) über die Command Palette wird eine Vorlage für ein \latex-Projekt im Dateisystem angelegt. Der Speicherort ist von der Einstellung des RookieTex Packages abhängig, dort kann je nach Wunsch festgelegt werden, wo die benötigten Dateien und Verzeichnisse abgelegt werden.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.5]{img/package_settings.png}
+                \caption{RookieTex Package Settings}
+            \end{figure}
+            Zusätzlich zum verwendeten Speicherort, kann entschieden werden, ob das Projekt für die Einbindung von Source Code vorbereitet werden soll und ob ein initiales Glossar miterstellt wird.
 
         \subsection{Konvertierung von Plain Text Listen}
             Das RookieTeX Package bietet eine Konvertierung für geordnete und ungeordnete Listen, welche im Plain Text Format vorliegen an. Dazu wird eine Liste mit Spiegelstrichen oder nummerierter Aufzählung markiert und anschließend der Befehl \texttt{convertListToTex} aus der Command Palette aktiviert.
             \\[5mm]
-            Konvertierung einer ungeordneten Liste: \\
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.5]{img/convert_list_cp.png}
+                \caption{Konvertierung einer Liste}
+            \end{figure}
+
+            Vor und nach der Konvertierung einer ungeordneten Liste: \\[5mm]
             \begin{minipage}[c]{0.45\textwidth}
                 \begin{itemize}
                     \item[-] Bananen
@@ -57,7 +69,7 @@
                 }
             \end{minipage}
 
-            Konvertierung einer geordneten Liste: \\
+            Vor und nach der Konvertierung einer geordneten Liste: \\[5mm]
             \begin{minipage}[c]{0.45\textwidth}
                 \begin{enumerate}
                     \item Bananen
@@ -100,10 +112,9 @@
         \subsection{Nutzung von Snippets über die Command Palette}
             Neben der Aktivierung von Snippets mithilfe der Standardfunktionalität von Atom, also in dem spezifische Snippet Prefixe eingetippt werden, bietet RookieTeX die Möglichkeit Snippets über die Command Palette einzufügen. Die Command Palette dient dazu Befehle an den Editor abzusetzen. Durch bestimmte Befehle ermöglicht das Package nun \latex Snippets in den aktiven Editor-Tab an stelle des Cursors einzufügen. Der Zugriff auf Snippets über die Command Palette bietet den Vorteil, dass das Prefix des Snippets nicht bekannt sein muss, denn die Command Palette liefert ein Buchstaben-Matching innerhalb von Wörtern.
             \begin{figure}[H]
-                \begin{center}
+                \centering
                     \includegraphics[scale=0.5]{img/snippets_via_cp.png}
                     \caption{Snippet via Command Palette einfügen}
-                \end{center}
             \end{figure}
 
     \section{Entscheidung für die Entwicklung mit JavaScript}
@@ -113,14 +124,12 @@
         Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern.
 
         \begin{figure}[H]
-            \begin{center}
+            \centering
                 \includegraphics[scale=0.5]{img/package_structure.png}
                 \caption{Atom Package Struktur}
-            \end{center}
         \end{figure}
 
-        Die für das RookieTeX Package wichtigsten Verzeichnisse sind \texttt{lib} und \texttt{snippets}. Im Verzeichnis \texttt{lib}    befindet sich die Logik des Packages bestehend aus den Dateien:
-
+        Die für das RookieTeX Package wichtigsten Verzeichnisse sind \texttt{lib} und \texttt{snippets}. Im Verzeichnis \texttt{lib}    befindet sich die Logik des Packages bestehend aus den Dateien: \\[5mm]
         \begin{minipage}{\textwidth}
             \begin{tabular}{ | c | p{0.7\textwidth} | }
                 \hline
@@ -139,7 +148,7 @@
                 \texttt{utils.js} & Hilfsfunktionen \\
                 \hline
             \end{tabular}
-        \end{minipage}
+        \end{minipage} \\[5mm]
         Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also \latex Snippets. Die Snippets haben folgende Form:
         \\[5mm]
         \insertcode{src/example_snippet.cson}{\latex Snippet Beispiel (\latex Tabelle)}
