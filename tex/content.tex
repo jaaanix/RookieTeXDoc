@@ -34,7 +34,7 @@
             Bei der Generierung eines \latex-Projekts (\texttt{InitializeTexProject}) über die Command Palette wird eine Vorlage für ein \latex-Projekt im Dateisystem angelegt. Der Speicherort ist von der Einstellung des RookieTex Packages abhängig, dort kann je nach Wunsch festgelegt werden, wo die benötigten Dateien und Verzeichnisse abgelegt werden.
             \begin{figure}[H]
                 \centering
-                \includegraphics[scale=0.5]{img/package_settings.png}
+                \includegraphics[width=\textwidth]{img/package_settings.png}
                 \caption{RookieTex Package Settings}
             \end{figure}
             Zusätzlich zum verwendeten Speicherort, kann entschieden werden, ob das Projekt für die Einbindung von Source Code vorbereitet werden soll und ob ein initiales Glossar miterstellt wird.
@@ -44,7 +44,7 @@
             \\[5mm]
             \begin{figure}[H]
                 \centering
-                \includegraphics[scale=0.5]{img/convert_list_cp.png}
+                \includegraphics[width=0.7\textwidth]{img/convert_list_cp.png}
                 \caption{Konvertierung einer Liste}
             \end{figure}
 
@@ -94,10 +94,12 @@
             Das RookieTeX Package kann bereits vorhandenen ausgewählten Text fett, kursiv oder unterstrichen formatieren. Ist der Text markiert wird über die Command Palette die gewünschte Formatierung ausgewählt.
             \\[5mm]
             \begin{figure}[H]
-                \includegraphics[scale=0.5]{img/make_bold_example.png}
+                \includegraphics[width=\textwidth
+                ]{img/make_bold_example.png}
                 \caption{Konvertierung von markiertem Text}
             \end{figure}
             \begin{minipage}{\textwidth}
+                \centering
                 \begin{tabular}{ | l | l | }
                     \hline
                     \textbf{Plain Text} & \textbf{\latex Code} \\
@@ -113,7 +115,7 @@
             Neben der Aktivierung von Snippets mithilfe der Standardfunktionalität von Atom, also in dem spezifische Snippet Prefixe eingetippt werden, bietet RookieTeX die Möglichkeit Snippets über die Command Palette einzufügen. Die Command Palette dient dazu Befehle an den Editor abzusetzen. Durch bestimmte Befehle ermöglicht das Package nun \latex Snippets in den aktiven Editor-Tab an stelle des Cursors einzufügen. Der Zugriff auf Snippets über die Command Palette bietet den Vorteil, dass das Prefix des Snippets nicht bekannt sein muss, denn die Command Palette liefert ein Buchstaben-Matching innerhalb von Wörtern.
             \begin{figure}[H]
                 \centering
-                    \includegraphics[scale=0.5]{img/snippets_via_cp.png}
+                    \includegraphics[width=\textwidth]{img/snippets_via_cp.png}
                     \caption{Snippet via Command Palette einfügen}
             \end{figure}
 
@@ -122,7 +124,6 @@
 
     \section{Aufbau eines Atom Packages}
         Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern.
-
         \begin{figure}[H]
             \centering
                 \includegraphics[scale=0.5]{img/package_structure.png}
@@ -166,9 +167,26 @@
 \chapter{Implementierung}
     \section{Implementierung der Generieung eines \latex-Projekts}
         TODO: Erklärung
+        \begin{itemize}
+          \item genutzte javascript bibliotheken
+          \item wie eingebunden
+          \item synchrones erstellen von verzeichnisen und dateien
+        \end{itemize}
+
     \section{Implementierung der Konvertierung von Plain Text Listen}
         TODO: Erklärung
+        \begin{itemize}
+          \item regex und regex syntax
+        \end{itemize}
     \section{Implementierung der Formatierung von Text}
         TODO: Erklärung
+        \begin{itemize}
+          \item verwendung der atom api
+          \item verwendung von standard js functions
+        \end{itemize}
     \section{Implementierung der Nutzung von Snippets über die Command Palette}
         TODO: Erklärung
+        \begin{itemize}
+          \item erstellung der snippets.cson und definieren von scopes
+          \item ausführen von snippets durch simulation der tab taste, weil api das triggern von snippets nicht anbietet
+        \end{itemize}
