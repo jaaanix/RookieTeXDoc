@@ -32,23 +32,31 @@
     \section{Funktionalitäten von RookieTeX}
         \subsection{Generieung eines LaTeX-Projekts}
             TODO: screenshots
+
         \subsection{Konvertierung von Plain Text Listen}
             Das RookieTeX Package bietet eine Konvertierung für geordnete und ungeordnete Listen, welche in Plain Text vorliegen an.
             TODO: screenshots
+
         \subsection{Formatierung/Konvertierung von Text}
             Das RookieTeX Package kann bereits vorhandenen ausgewählten Text fett, kursiv oder unterstrichen formatieren.
-            \begin{minipage}
-                \includegraphics[scale=1.0]{img/make_bold_example.png}
+            \\[5mm]
+            \begin{figure}[h]
+                \includegraphics[scale=0.5]{img/make_bold_example.png}
                 \caption{Konvertierung von markiertem Text}
+            \end{figure}
+            \begin{minipage}{\textwidth}
+                \begin{tabular}{ | l | l | }
+                    \hline
+                    \textbf{Plain Text} & \textbf{LaTeX Code} \\
+                    \hline
+                    fetter Text & \texttt{\textbackslash textbf\{fetter Text\}} \\
+                    kursiver Text & \texttt{\textbackslash textit\{kursiver Text\}} \\
+                    unterstrichener Text & \texttt{\textbackslash underline\{unterstrichener Text\}} \\
+                    \hline
+                \end{tabular}
             \end{minipage}
-            \begin{tabular}{ | c | c | }
-              \hline
-              fetter Text & \texttt{\\textbf{fetter Text}} \\
-              kursiver Text & \texttt{\\textit{kursiver Text}} \\
-              unterstrichener Text & \texttt{\\underline{unterstrichener Text}} \\
-              \hline
-            \end{tabular}
             TODO: screenshots
+
         \subsection{Nutzung von Snippets über die Command Palette}
             TODO: screenshots
 
