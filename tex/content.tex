@@ -3,7 +3,7 @@
     Die Software \tex ist ein von Donald E. Knuth entwickletes System um Texte jeglicher Art, aber vor allem Wissenschaftliche Texte zu verfassen. Aufbauend auf der Basis-Software \tex entwickelt Leslie Lamport seit den 1980er Jahren eine Sammlung von \tex-Makros (genannt \latex). Diese Tex-Makros dienen hauptsächlich dazu, dass verfassen von Texten mit \tex zu vereinfachen.
 
     \section{WYSIWYG}
-    WYSIWYG steht für What You See Is What You Get, dieses Prinzip beschreibt ein Verhalten von Textverarbeitungsprogrammen, in denen man schon während des Verfassens die finale Formatierung und das Aussehen des Textes zu sehen bekommt. Das bekannteste Beispiel für eine Software, welche nach diesem Prinzip funktioniert ist das Textverarbeitungsprogramm Microsoft Word.
+    WYSIWYG ist das Akronym für What You See Is What You Get, dieses Prinzip beschreibt ein Verhalten von Textverarbeitungsprogrammen, in denen man schon während des Verfassens die finale Formatierung und das Aussehen des Textes zu sehen bekommt. Das bekannteste Beispiel für eine Software, welche nach diesem Prinzip funktioniert ist das Textverarbeitungsprogramm Microsoft Word.
 
     \tex hingegen verzichtet auf diesen Ansatz. Genau wie bei der Auszeichnungssprache (markup language) HTML wird die Formatierung, Gliederung und das Aussehen des Produkts durch eine eigene Syntax abgebildet und ist mit dem Inhalt vermischt. Um das fertige Produkt, das Dokument zu erstellen, ist ein Kompiliervorgang nötig. Dieses Prinzip wird auch als WYSIWYAF (What You See Is What You Asked For) bezeichnet.
 
@@ -30,7 +30,7 @@
     \end{itemize}
 
     \section{Funktionalitäten von RookieTeX}
-        \subsection{Generieung eines \latex -Projekts}
+        \subsection{Generieung eines \latex-Projekts}
             TODO: screenshots
 
         \subsection{Konvertierung von Plain Text Listen}
@@ -38,7 +38,7 @@
             TODO: screenshots
 
         \subsection{Formatierung/Konvertierung von Text}
-            Das RookieTeX Package kann bereits vorhandenen ausgewählten Text fett, kursiv oder unterstrichen formatieren.
+            Das RookieTeX Package kann bereits vorhandenen ausgewählten Text fett, kursiv oder unterstrichen formatieren. Ist der Text markiert wird über die Command Palette die gewünschte Formatierung ausgewählt.
             \\[5mm]
             \begin{figure}[H]
                 \includegraphics[scale=0.5]{img/make_bold_example.png}
@@ -55,51 +55,59 @@
                     \hline
                 \end{tabular}
             \end{minipage}
-            TODO: screenshots
 
         \subsection{Nutzung von Snippets über die Command Palette}
-            Neben der Aktivierung von Snippets mithilfe der Standardfunktionalität von Atom, also in dem spezifische Snippet Prefix eingetippt wird, bietet RookieTeX die Möglichkeit Snippets über die Command Palette einzufügen. Die Command Palette dient dazu Befehle an den Editor abzusetzen. Durch bestimmte Befehle ermöglicht das Package nun \latex Snippets in den aktiven Editor-Tab an stelle des Cursors einzufügen.
+            Neben der Aktivierung von Snippets mithilfe der Standardfunktionalität von Atom, also in dem spezifische Snippet Prefixe eingetippt werden, bietet RookieTeX die Möglichkeit Snippets über die Command Palette einzufügen. Die Command Palette dient dazu Befehle an den Editor abzusetzen. Durch bestimmte Befehle ermöglicht das Package nun \latex Snippets in den aktiven Editor-Tab an stelle des Cursors einzufügen. Der Zugriff auf Snippets über die Command Palette bietet den Vorteil, dass das Prefix des Snippets nicht bekannt sein muss, denn die Command Palette liefert ein Buchstaben-Matching innerhalb von Wörtern.
             \begin{figure}[H]
-                \includegraphics[scale=0.5]{img/snippets_via_cp.png}
-                \caption{Snippet via Command Palette einfügen}
+                \begin{center}
+                    \includegraphics[scale=0.5]{img/snippets_via_cp.png}
+                    \caption{Snippet via Command Palette einfügen}
+                \end{center}
             \end{figure}
-            TODO: screenshots
 
     \section{Entscheidung für die Entwicklung mit JavaScript}
     \textbf{Weglassen falls genug Content.}
 
     \section{Aufbau eines Atom Packages}
-    \begin{figure}
-        \includegraphics[scale=1.0]{img/package_structure.png}
-        \caption{Atom Package Struktur}
-    \end{figure}
-    Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern.
+        Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern.
 
-    Die für das RookieTeX Package wichtigsten Verzeichnisse sind \texttt{lib} und \texttt{snippets}. Im Verzeichnis \texttt{lib} befindet sich die Logik des Packages bestehend aus den Dateien:
-    \begin{tabular}{ | c | c | }
-      \hline
-      \texttt{ai-pack-view.coffee} & Einstiegpunkt des Packages \\
-      \hline
-      \texttt{ai-pack.js} & Deklaration von Command Palette Befehlen und Package Einstellungen \\
-      \hline
-      \texttt{converter.js} & Funktionen zur Konvertierung von Text in \tex \\
-      \hline
-      \texttt{generator.js} & Funktionen zur Generieung eines \tex Projekts \\
-      \hline
-      \texttt{templates.js} & Funktionen zur Generierung von \tex Elementen \\
-      \hline
-      \texttt{utils.js} & Hilfsfunktionen \\
-      \hline
-    \end{tabular}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.5]{img/package_structure.png}
+                \caption{Atom Package Struktur}
+            \end{center}
+        \end{figure}
 
-    Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also \latex Snippets. Die Snippets haben folgende Form:
-    \insertcode{src/example_snippet.cson}{\latex Snippet Beispiel (\latex Tabelle)}
+        Die für das RookieTeX Package wichtigsten Verzeichnisse sind \texttt{lib} und \texttt{snippets}. Im Verzeichnis \texttt{lib}    befindet sich die Logik des Packages bestehend aus den Dateien:
 
-\chapter{Aufbau eines \tex Projekts}
-    \section{Modulare Struktur eines \tex Projekts}
-    Um die Erstellung eines \tex Projekts zu erleichtern, bietet es sich an eine modulare Struktur, also einen bestimmten Aufbau des Projekts zu nutzen. Es ist sinnvoll Dinge mit unterschiedlicher Semantik voneinander zu trennen. Zum Beispiel sollte sich ein Deckblatt oder ein Glossar nicht in der selben \texttt{.tex} Datei befinden wie der eigentliche Inhalt des im Projekt behandelten Themas. Des Weiteren sollten Projketübergreifende Einstellungen wie genutzte \latex Packages oder Seitenabstände in einer \texttt{.sty} Datei zusammengefasst sein. Diese Vorgehensweise hat den Vorteil das besonders in umfangreichen Projekten die Übersicht gewährleistet wird. In den \texttt{.tex} Dateien die den eigentlichen Inhalt des zu erstellenden Dokuments beinhalten, kann sich so hauptsächlich auf das schreiben von Text konzentriert werden.
+        \begin{minipage}{\textwidth}
+            \begin{tabular}{ | c | p{0.7\textwidth} | }
+                \hline
+                \textbf{Dateiname} & \textbf{Zweck} \\
+                \hline
+                \texttt{ai-pack-view.coffee} & Einstiegpunkt des Packages \\
+                \hline
+                \texttt{ai-pack.js} & Deklaration von Command Palette Befehlen und Package Einstellungen \\
+                \hline
+                \texttt{converter.js} & Funktionen zur Konvertierung von Text in \tex \\
+                \hline
+                \texttt{generator.js} & Funktionen zur Generieung eines \tex-Projekts \\
+                \hline
+                \texttt{templates.js} & Funktionen zur Generierung von \tex Elementen \\
+                \hline
+                \texttt{utils.js} & Hilfsfunktionen \\
+                \hline
+            \end{tabular}
+        \end{minipage}
+        \\[5mm]
+        Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript    Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also \latex Snippets. Die Snippets haben     folgende Form:
+        \insertcode{src/example_snippet.cson}{\latex Snippet Beispiel (\latex Tabelle)}
 
-    \tex liefert verschiedene Möglichkeiten zum auslagern und modularisieren von \tex -Komponenten. Als Basisfunktion kann der \latex-Befehl \texttt{\\include} gennant werden, welcher dazu dient verschiedene \texttt{.tex} Dateien in einer Datei zusammenzuführen. Der \latex-Compiler sorgt dann automatisch dafür, dass alle \texttt{.tex} Dateien in der angegebenen Reihenfolge kompiliert werden. Diese Funktionalität arbeitet sowohl auf einer Verzeichnisebene, als auch Verzeichnisübergreifend.
+\chapter{Aufbau eines \tex-Projekts}
+    \section{Modulare Struktur eines \tex-Projekts}
+    Um die Erstellung eines \tex-Projekts zu erleichtern, bietet es sich an eine modulare Struktur, also einen bestimmten Aufbau des Projekts zu nutzen. Es ist sinnvoll Dinge mit unterschiedlicher Semantik voneinander zu trennen. Zum Beispiel sollte sich ein Deckblatt oder ein Glossar nicht in der selben \texttt{.tex} Datei befinden wie der eigentliche Inhalt des im Projekt behandelten Themas. Des Weiteren sollten Projketübergreifende Einstellungen wie genutzte \latex-Packages oder Seitenabstände in einer \texttt{.sty} Datei zusammengefasst sein. Diese Vorgehensweise hat den Vorteil das besonders in umfangreichen Projekten die Übersicht gewährleistet wird. In den \texttt{.tex} Dateien die den eigentlichen Inhalt des zu erstellenden Dokuments beinhalten, kann sich so hauptsächlich auf das schreiben von Text konzentriert werden.
+
+    \tex liefert verschiedene Möglichkeiten zum auslagern und modularisieren von \tex-Komponenten. Als Basisfunktion kann der \latex-Befehl \texttt{\\include} gennant werden, welcher dazu dient verschiedene \texttt{.tex} Dateien in einer Datei zusammenzuführen. Der \latex-Compiler sorgt dann automatisch dafür, dass alle \texttt{.tex} Dateien in der angegebenen Reihenfolge kompiliert werden. Diese Funktionalität arbeitet sowohl auf einer Verzeichnisebene, als auch Verzeichnisübergreifend.
 
 \chapter{Implementierung}
     \section{Implementierung der Generieung eines \latex-Projekts}
