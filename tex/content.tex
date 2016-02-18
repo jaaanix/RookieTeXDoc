@@ -193,15 +193,17 @@
               \hline
             \end{tabular}
         \end{minipage}
+
     \section{Implementierung der Formatierung von Text}
-        TODO: Erklärung
-        \begin{itemize}
-          \item verwendung der atom api
-          \item verwendung von standard js functions
-        \end{itemize}
+        Ähnlich wie Konvertierung von Plain Text Listen zu \latex-Listen funktioniert auch das formatierung von ausgewählten Textabschnitten. Mit Hilfe von Atom-API Funktionen wird der markierte Text im Editor eingelesen und bearbeitet. Zur einfachen Formatierung sind in Gegensatz zur Listenkonvertierung jedoch keine Regex-Abgleichungen nötig. Um den Text ins \latex-Format zu überführen wird er mit der JavaScript Funktion \texttt{slice} bearbeitet, welche den markierten Text in die geschweiften Klammern des \latex-Befehls einfügt. Der zuvor selektierte Text wird anschließend durch den neu markierten Text ersetzt.
+
     \section{Implementierung der Nutzung von Snippets über die Command Palette}
-        TODO: Erklärung
-        \begin{itemize}
-          \item erstellung der snippets.cson und definieren von scopes
-          \item ausführen von snippets durch simulation der tab taste, weil api das triggern von snippets nicht anbietet
-        \end{itemize}
+        Erkennt der Atom Editor im eingegebene Text ein Snippet wird dieses in Form einer Auswahlvorschau angezeigt.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.5]{img/snippet_preview.png}
+            \caption{Snippet Auswahlvorschau}
+        \end{figure}
+        Im Normalfall wird das gewünschte Snippet dann direkt via Tab-Taste aktiviert oder erst per Pfeiltaste oder Maus ausgewählt und anschließend mit Enter bestätigt.
+        \\
+        Um Snippets über die Command Palette einfügen zu können, wurde das Einfügen von Snippets aufgrund nicht vorhandener API Funktionen, welche das aktivieren eins Snippets ermöglichen nach einem ähnlichen Prinzip implementiert. Wird ein Snippet in der Command Palette gesucht und ausgewählt, fügt die Funktion \texttt{insertText} der Klasse \texttt{Editor} das zugehörige Prefix für das gewünschte Snippet ein. Unmittelbar danach wird durch die Funktion \texttt{buildKeydownEvent} der Klasse KeymapManager der ein Betätigend der Tab-Taste simuliert, wodurch das gewünschte Snippet eingefügt wird.
