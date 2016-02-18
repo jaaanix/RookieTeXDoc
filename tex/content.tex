@@ -123,11 +123,15 @@
     \textbf{Weglassen falls genug Content.}
 
     \section{Aufbau eines Atom Packages}
-        Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern.
-        \begin{figure}[H]
-            \centering
+        \begin{figure}[htbp]
+            \begin{minipage}{0.6\textwidth}
+                Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern.
+            \end{minipage}
+            \begin{minipage}{0.4\textwidth}
+                \centering
                 \includegraphics[scale=0.5]{img/package_structure.png}
                 \caption{Atom Package Struktur}
+            \end{minipage}
         \end{figure}
 
         Die für das RookieTeX Package wichtigsten Verzeichnisse sind \texttt{lib} und \texttt{snippets}. Im Verzeichnis \texttt{lib}    befindet sich die Logik des Packages bestehend aus den Dateien: \\[5mm]
@@ -157,6 +161,9 @@
         Zeile 1 bennent das Snippet. Zeile 2 gibt das auslöende Prefix an, welches genutzt wird um das Snippet zu verwenden und Zeile 3 bis 8 spiegeln den bei Verwendung eingefügten Inhalt des Snippets wieder. Ein wichtiger Askpekt sind die in Zeile 5 und 6 zu sehenden Tab-Stops, welche nach dem Einfügen des Snippets body's dafür sorgen, dass der User mithilfe der Tab-Taste die Inhalte des \tex-Befehls füllen kann.
         \\
         Des Weiteren wird in dieser Datei festgelegt welche Art von Dateien die enthaltenen Snippets auslösen/triggern können oder auch welche \textit{Scopes} die Snippets verwenden können. Im konkreten Fall von RookieTex ist die Definition der unterstützten Formate/Scopes folgende: \texttt{'.text.plain, .text.latex':}. Es ist also bei der Bearbeitung von Plain Text oder \latex-Text möglich enthaltenen Snippets zu nutzen.
+        \\
+        Im Hauptverzeichnis befindet sich des Weiteren die Datei \texttt{package.json}, diese Datei stellt eine Art globale Konfigurationsdatei für das Package dar. Hier werden Dinge wie der Name, Beschreibung, Version, Command Palette Kommandos und Abhängigkeiten zu anderen JavaScript Bibliotheken festgelegt.
+        \insertcode{src/example_package.json}{Ausschnitt der package.json Datei des RookieTex Packages}
 
 \chapter{Aufbau eines \tex-Projekts}
     \section{Modulare Struktur eines \tex-Projekts}
@@ -166,7 +173,10 @@
 
 \chapter{Implementierung}
     \section{Implementierung der Generieung eines \latex-Projekts}
-        TODO: Erklärung
+        Um ein \latex-Projekt zu generieren, werden zunächst die in den Package-Settings gelesen. Dies geschieht mit den mitgelieferten Atom-API Funktionen. Auf Basis der ermittelten Angaben zur Einbindung von Glossar, Code Snippets und Projektpfad werden schließlich die zu erstellenden Datei in Form von String gespeichert. Sind alle Dateiinhalte zwischengespeichert, werden die benötigten Verzeichnisse und Datei mit Hilfe der Node.js Libraries \texttt{mkdirp} und \texttt{fs} erstellt. Dabei ist zu beachten, dass die Verzeichnisse synchron erstellt werden (Funktion: \texttt{mkdirp.sync(dir, opts)}). Das ist wichtig, da es sonst zur Laufzeit passieren kann, dass ein Unterverzeichnis parallel mit einem übergeordneten Verzeichnis erstellt wird, was einen Fehler und ein nicht korrekt erstelltes \latex-Projekt zur Folge hat.
+        \\
+        Damit die genutzten JavaScript Libraries dem Nutzer auch dann zur Verfügung stehen wenn diese nicht manuell installiert wurden, sind diese in der Package-Konfigurationsdatei \texttt{package.json} eingebunden (Siehe Listing 2). In den \textit{dependencies} wird der Name der Library, gefolgt von der benötigten Version angegeben. Im Falle der Package-Installation werden dieses Libraries dann automatisch installiert. 
+
         \begin{itemize}
           \item genutzte javascript bibliotheken
           \item wie eingebunden
