@@ -1,6 +1,6 @@
 \chapter{Latex}
     \section{Der Ursprung von \latex}
-    Die Software \tex ist ein von Donald E. Knuth entwickletes System um Texte jeglicher Art, aber vor allem Wissenschaftliche Texte zu verfassen. Aufbauend auf der Basis-Software \tex entwickelt Leslie Lamport seit den 1980er Jahren eine Sammlung von \tex-Makros (genannt \latex). Diese Tex-Makros dienen hauptsächlich dazu, dass verfassen von Texten mit \tex zu vereinfachen.
+    Die Software \tex ist ein von Donald E. Knuth entwickeltes System um Texte jeglicher Art, aber vor allem wissenschaftliche Texte zu verfassen. Aufbauend auf der Basis-Software \tex entwickelt Leslie Lamport seit den 1980er Jahren eine Sammlung von \tex-Makros (genannt \latex). Diese Tex-Makros dienen hauptsächlich dazu, dass verfassen von Texten mit \tex zu vereinfachen.
 
     \section{WYSIWYG}
     WYSIWYG ist das Akronym für What You See Is What You Get, dieses Prinzip beschreibt ein Verhalten von Textverarbeitungsprogrammen, in denen man schon während des Verfassens die finale Formatierung und das Aussehen des Textes zu sehen bekommt. Das bekannteste Beispiel für eine Software, welche nach diesem Prinzip funktioniert ist das Textverarbeitungsprogramm Microsoft Word.
@@ -8,13 +8,13 @@
     \tex hingegen verzichtet auf diesen Ansatz. Genau wie bei der Auszeichnungssprache (markup language) HTML wird die Formatierung, Gliederung und das Aussehen des Produkts durch eine eigene Syntax abgebildet und ist mit dem Inhalt vermischt. Um das fertige Produkt, das Dokument zu erstellen, ist ein Kompiliervorgang nötig. Dieses Prinzip wird auch als WYSIWYAF (What You See Is What You Asked For) bezeichnet.
 
     \section{Haupteinsatzgebiete für \tex}
-    Besonders im naturwissenschaftlichen Bereich bietet sich die Auszeichnungssprache \tex an, da \tex eine komfortable Möglichkeit bietet Formeln oder Programmcode darzustellen. Ebenso lassen sich Abstände genau definieren (in Millimeter, Centimeter usw.), was ein häufig wichtiges Kriterium für Wissenschaftliche Arbeiten darstellt. \tex bietet sich für Bachelorarbeiten, Masterarbeiten, Dissertationen und andere Arbeiten welche mathematische Inhalte vermittelnan an.
+    Besonders im naturwissenschaftlichen Bereich bietet sich die Auszeichnungssprache \tex an, da \tex eine komfortable Möglichkeit bietet Formeln oder Programmcode darzustellen. Ebenso lassen sich Abstände genau definieren (in Millimeter, Zentimeter usw.), was ein häufig wichtiges Kriterium für Wissenschaftliche Arbeiten darstellt. \tex bietet sich für Bachelorarbeiten, Masterarbeiten, Dissertationen und andere Arbeiten welche mathematische Inhalte vermitteln an.
 
-    Weitere komfortable und professionelle Möglichkeiten bietet \tex unter anderem zum erstellen von Inhaltsverzeichnisses, Abbildungsverzeichnissen, Tabellenverzeichnissen, Literaturverzeichnissen und Glossaren.
+    Weitere komfortable und professionelle Möglichkeiten bietet \tex unter Anderem zum erstellen von Inhaltsverzeichnisses, Abbildungsverzeichnissen, Tabellenverzeichnissen, Literaturverzeichnissen und Glossaren.
 
 \chapter{Atom}
     \section{Atom der hackable Text Editor}
-    Atom ist ein vom Online-Dienst GitHub seit 2014 verfügbarer Text-Editor. Er ist frei verfügbar, open-source (MIT License) und plattformunabhängig. Entwicklelt wurde der Text-Editor mit CoffeeScript, JavaScript, Less und HTML. Der Entwickler GitHub wirbt mit dem Slogan "`A hackable text editor for the 21st Century"'. Damit wird sich vor allem auf die Anpassbarkeit des Aussehens und der Verhaltens des Editor bezogen.
+    Atom ist ein vom Online-Dienst GitHub seit 2014 verfügbarer Text-Editor. Er ist frei verfügbar, open-source (MIT License) und plattformunabhängig. Entwickelt wurde der Text-Editor mit CoffeeScript, JavaScript, Less und HTML. Der Entwickler GitHub wirbt mit dem Slogan "`A hackable text editor for the 21st Century"'. Damit wird sich vor allem auf die Anpassbarkeit des Aussehens und das Verhaltens des Editor bezogen.
 
     Ebenso wie der Text-Editor selbst, sind auch die in Atom verfügbaren Packages (Plugins) in CoffeeScript bzw. JavaScript programmiert. Die Packages erweitern den Editor in seiner Funktionalität und werden sowohl von GitHub selber, so wie auch durch die Community erstellt und gepflegt.
 
@@ -30,14 +30,14 @@
     \end{itemize}
 
     \section{Funktionalitäten von RookieTeX}
-        \subsection{Generieung eines \latex-Projekts}
+        \subsection{Generierung eines \latex-Projekts}
             Bei der Generierung eines \latex-Projekts (\texttt{InitializeTexProject}) über die Command Palette wird eine Vorlage für ein \latex-Projekt im Dateisystem angelegt. Der Speicherort ist von der Einstellung des RookieTex Packages abhängig, dort kann je nach Wunsch festgelegt werden, wo die benötigten Dateien und Verzeichnisse abgelegt werden.
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=\textwidth]{img/package_settings.png}
                 \caption{RookieTex Package Settings}
             \end{figure}
-            Zusätzlich zum verwendeten Speicherort, kann entschieden werden, ob das Projekt für die Einbindung von Source Code vorbereitet werden soll und ob ein initiales Glossar miterstellt wird.
+            Zusätzlich zum verwendeten Speicherort, kann entschieden werden, ob das Projekt für die Einbindung von Source Code vorbereitet werden soll und ob ein initiales Glossar mit erstellt wird.
 
         \subsection{Konvertierung von Plain Text Listen}
             Das RookieTeX Package bietet eine Konvertierung für geordnete und ungeordnete Listen, welche im Plain Text Format vorliegen an. Dazu wird eine Liste mit Spiegelstrichen oder nummerierter Aufzählung markiert und anschließend der Befehl \texttt{convertListToTex} aus der Command Palette aktiviert.
@@ -140,13 +140,13 @@
                 \hline
                 \textbf{Dateiname} & \textbf{Zweck} \\
                 \hline
-                \texttt{ai-pack-view.coffee} & Einstiegpunkt des Packages \\
+                \texttt{ai-pack-view.coffee} & Einstiegspunkt des Packages \\
                 \hline
                 \texttt{ai-pack.js} & Deklaration von Command Palette Befehlen und Package Einstellungen \\
                 \hline
                 \texttt{converter.js} & Funktionen zur Konvertierung von Text in \tex \\
                 \hline
-                \texttt{generator.js} & Funktionen zur Generieung eines \tex-Projekts \\
+                \texttt{generator.js} & Funktionen zur Generierung eines \tex-Projekts \\
                 \hline
                 \texttt{templates.js} & Funktionen zur Generierung von \tex Elementen \\
                 \hline
@@ -154,11 +154,11 @@
                 \hline
             \end{tabular}
         \end{minipage} \\[5mm]
-        Im Verzeichnis \texttt{snippets} befindet sich auschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also \latex Snippets. Die Snippets haben folgende Form:
+        Im Verzeichnis \texttt{snippets} befindet sich ausschließlich die Datei \texttt{latex-snippets.cson}. Diese Datei im CoffeeScript Object Notation Format beinhaltet jegliche Snippets des Package, im Fall von RookieTeX also \latex Snippets. Die Snippets haben folgende Form:
         \\[5mm]
         \insertcode{src/example_snippet.cson}{\latex Snippet Beispiel (\latex Tabelle)}
 
-        Zeile 1 bennent das Snippet. Zeile 2 gibt das auslöende Prefix an, welches genutzt wird um das Snippet zu verwenden und Zeile 3 bis 8 spiegeln den bei Verwendung eingefügten Inhalt des Snippets wieder. Ein wichtiger Askpekt sind die in Zeile 5 und 6 zu sehenden Tab-Stops, welche nach dem Einfügen des Snippets body's dafür sorgen, dass der User mithilfe der Tab-Taste die Inhalte des \tex-Befehls füllen kann.
+        Zeile 1 benennt das Snippet. Zeile 2 gibt das auslösende Prefix an, welches genutzt wird um das Snippet zu verwenden und Zeile 3 bis 8 spiegeln den bei Verwendung eingefügten Inhalt des Snippets wieder. Ein wichtiger Aspekt sind die in Zeile 5 und 6 zu sehenden Tab-Stops, welche nach dem Einfügen des Snippets-Body's dafür sorgen, dass der User mithilfe der Tab-Taste die Inhalte des \tex-Befehls füllen kann.
         \\
         Des Weiteren wird in dieser Datei festgelegt welche Art von Dateien die enthaltenen Snippets auslösen/triggern können oder auch welche \textit{Scopes} die Snippets verwenden können. Im konkreten Fall von RookieTex ist die Definition der unterstützten Formate/Scopes folgende: \texttt{'.text.plain, .text.latex':}. Es ist also bei der Bearbeitung von Plain Text oder \latex-Text möglich enthaltenen Snippets zu nutzen.
         \\
@@ -167,12 +167,12 @@
 
 \chapter{Aufbau eines \tex-Projekts}
     \section{Modulare Struktur eines \tex-Projekts}
-    Um die Erstellung eines \tex-Projekts zu erleichtern, bietet es sich an eine modulare Struktur, also einen bestimmten Aufbau des Projekts zu nutzen. Es ist sinnvoll Dinge mit unterschiedlicher Semantik voneinander zu trennen. Zum Beispiel sollte sich ein Deckblatt oder ein Glossar nicht in der selben \texttt{.tex} Datei befinden wie der eigentliche Inhalt des im Projekt behandelten Themas. Des Weiteren sollten Projketübergreifende Einstellungen wie genutzte \latex-Packages oder Seitenabstände in einer \texttt{.sty} Datei zusammengefasst sein. Diese Vorgehensweise hat den Vorteil das besonders in umfangreichen Projekten die Übersicht gewährleistet wird. In den \texttt{.tex} Dateien die den eigentlichen Inhalt des zu erstellenden Dokuments beinhalten, kann sich so hauptsächlich auf das schreiben von Text konzentriert werden.
+    Um die Erstellung eines \tex-Projekts zu erleichtern, bietet es sich an eine modulare Struktur, also einen bestimmten Aufbau des Projekts zu nutzen. Es ist sinnvoll Dinge mit unterschiedlicher Semantik voneinander zu trennen. Zum Beispiel sollte sich ein Deckblatt oder ein Glossar nicht in der selben \texttt{.tex} Datei befinden wie der eigentliche Inhalt des im Projekt behandelten Themas. Des Weiteren sollten Projektübergreifende Einstellungen wie genutzte \latex-Packages oder Seitenabstände in einer \texttt{.sty} Datei zusammengefasst sein. Diese Vorgehensweise hat den Vorteil das besonders in umfangreichen Projekten die Übersicht gewährleistet wird. In den \texttt{.tex} Dateien die den eigentlichen Inhalt des zu erstellenden Dokuments beinhalten, kann sich so hauptsächlich auf das schreiben von Text konzentriert werden.
 
-    \tex liefert verschiedene Möglichkeiten zum auslagern und modularisieren von \tex-Komponenten. Als Basisfunktion kann der \latex-Befehl \texttt{\\include} gennant werden, welcher dazu dient verschiedene \texttt{.tex} Dateien in einer Datei zusammenzuführen. Der \latex-Compiler sorgt dann automatisch dafür, dass alle \texttt{.tex} Dateien in der angegebenen Reihenfolge kompiliert werden. Diese Funktionalität arbeitet sowohl auf einer Verzeichnisebene, als auch Verzeichnisübergreifend.
+    \tex liefert verschiedene Möglichkeiten zum auslagern und modularisieren von \tex-Komponenten. Als Basisfunktion kann der \latex-Befehl \texttt{\\include} genannt werden, welcher dazu dient verschiedene \texttt{.tex} Dateien in einer Datei zusammenzuführen. Der \latex-Compiler sorgt dann automatisch dafür, dass alle \texttt{.tex} Dateien in der angegebenen Reihenfolge kompiliert werden. Diese Funktionalität arbeitet sowohl auf einer Verzeichnisebene, als auch Verzeichnis übergreifend.
 
 \chapter{Implementierung}
-    \section{Implementierung der Generieung eines \latex-Projekts}
+    \section{Implementierung der Generierung eines \latex-Projekts}
         Um ein \latex-Projekt zu generieren, werden zunächst die Package-Settings eingelesen. Dies geschieht mit mitgelieferten Atom-API Funktionen. Auf Basis der ermittelten Angaben zur Einbindung von Glossar, Code Snippets und Projektpfad werden schließlich die zu erstellenden Dateien in Form von Strings gespeichert. Sind alle Dateiinhalte zwischengespeichert, werden die benötigten Verzeichnisse und Dateien mit Hilfe der Node.js Libraries \texttt{mkdirp} und \texttt{fs} erstellt. Dabei ist zu beachten, dass die Verzeichnisse synchron erstellt werden (Funktion: \texttt{mkdirp.sync(dir, opts)}). Das ist wichtig, da es sonst zur Laufzeit passieren kann, dass ein Unterverzeichnis parallel mit einem übergeordneten Verzeichnis erstellt wird, was einen Fehler und ein nicht korrekt erstelltes \latex-Projekt zur Folge hat.
         \\
         Damit die genutzten JavaScript Libraries dem Nutzer auch dann zur Verfügung stehen wenn diese nicht manuell installiert werden, sind diese in der Package-Konfigurationsdatei \texttt{package.json} eingebunden (Siehe Listing 2). In den \textit{dependencies} wird der Name der Library, gefolgt von der benötigten Version angegeben. Im Falle der Package-Installation werden dieses Libraries dann automatisch installiert.
@@ -195,7 +195,7 @@
         \end{minipage}
 
     \section{Implementierung der Formatierung von Text}
-        Ähnlich wie Konvertierung von Plain Text Listen zu \latex-Listen funktioniert auch das formatierung von ausgewählten Textabschnitten. Mit Hilfe von Atom-API Funktionen wird der markierte Text im Editor eingelesen und bearbeitet. Zur einfachen Formatierung sind in Gegensatz zur Listenkonvertierung jedoch keine Regex-Abgleichungen nötig. Um den Text ins \latex-Format zu überführen wird er mit der JavaScript Funktion \texttt{slice} bearbeitet, welche den markierten Text in die geschweiften Klammern des \latex-Befehls einfügt. Der zuvor selektierte Text wird anschließend durch den neu markierten Text ersetzt.
+        Ähnlich wie Konvertierung von Plain Text Listen zu \latex-Listen funktioniert auch das formatieren von ausgewählten Textabschnitten. Mit Hilfe von Atom-API Funktionen wird der markierte Text im Editor eingelesen und bearbeitet. Zur einfachen Formatierung sind in Gegensatz zur Listenkonvertierung jedoch keine Regex-Abgleichungen nötig. Um den Text ins \latex-Format zu überführen wird er mit der JavaScript Funktion \texttt{slice} bearbeitet, welche den markierten Text in die geschweiften Klammern des \latex-Befehls einfügt. Der zuvor selektierte Text wird anschließend durch den neu markierten Text ersetzt.
 
     \section{Implementierung der Nutzung von Snippets über die Command Palette}
         Erkennt der Atom Editor im eingegebene Text ein Snippet wird dieses in Form einer Auswahlvorschau angezeigt.
@@ -207,3 +207,16 @@
         Im Normalfall wird das gewünschte Snippet dann direkt via Tab-Taste aktiviert oder erst per Pfeiltaste oder Maus ausgewählt und anschließend mit Enter bestätigt.
         \\
         Um Snippets über die Command Palette einfügen zu können, wurde das Einfügen von Snippets aufgrund nicht vorhandener API Funktionen, welche das aktivieren eins Snippets ermöglichen nach einem ähnlichen Prinzip implementiert. Wird ein Snippet in der Command Palette gesucht und ausgewählt, fügt die Funktion \texttt{insertText} der Klasse \texttt{Editor} das zugehörige Prefix für das gewünschte Snippet ein. Unmittelbar danach wird durch die Funktion \texttt{buildKeydownEvent} der Klasse KeymapManager der ein Betätigend der Tab-Taste simuliert, wodurch das gewünschte Snippet eingefügt wird.
+
+    \section{Hindernisse und Probleme bei der Entwicklung von RookieTex}
+        In der Zeit der Entwicklung des Packages hat der Atom Editor vier Versions Updates bekommen, angefangen mit Version 1.4.0 und aktuell mit Version 1.5.3 (Stand: 18.02.2016). Parallel zu diesen Updates wird die Atom API (\href{https://www.atom.io/docs/api/}{Atom API Link}) gepflegt. Auffällig ist die sehr unterschiedliche Detailtiefe der API, während eine Klasse bis ins Detail beschrieben sind und auch Code Beispiele vorliegen, sind andere Klasse nur sehr knapp beschrieben und bieten keine Beispiele an. Teilweise wird somit die Implementierung eines Packages sehr erschwert, da häufig Community Foren oder Packages von anderen Entwickler herangezogen werden müssen, um Code Beispiele einzusehen.
+        \\
+        Wegen der teilweise schlechte bzw. nicht ausführlichen Dokumentationen von Klassen, bietet es sich also in gewissen Fällen an auf weiter verbreitete Node.js Klassen zurückzugreifen. Im Falle des RookieTex Packages sind deshalb die externen Libraries \texttt{mkdirp} und \texttt{fs} zum Einsatz gekommen. Beispielsweise fehlt der Klasse \texttt{Directory} die Möglichkeit oder ggf. nur die Erklärung wie Verzeichnisse nicht asynchron sonder synchron erstellt werden können. Ein anderes Beispiel ist die für Einsteiger nicht ausreichende Beschreibung der Möglichkeit einen Tastendruck zu simulieren, welche in RookieTex genutzt wird um Snippets via Command Palette auszuführen.
+
+    \section{Nützliche Atom Packages zum anfertigen von \latex-Dokumenten}
+        \subsection{language-latex}
+            Das \textit{language-latex} Package sorgt dafür das ein Syntax-Highlighting von \latex-Code im Editor stattfindet. \latex-Befehle werden also farblich hervorgehoben und sind leichter erkennbar. Im Atom Editor lässt sich die aktuelle Sprache dann über die standardmäßige Tastenkombination \texttt{Strg-Shift-L} die Sprache \latex auswählen. Dokumente mit der Dateiendung \texttt{.tex} werden außerdem automatisch erkannt.
+        \subsection{latex}
+            Das \textit{latex} Package erlaubt es dem Benutzer bei installierem \latex-Compiler, \texttt{.tex}-Dateien aus dem Editor heraus zu kompilieren.
+        \subsection{linter-chktex}
+            In Kombination mit dem \textit{linter} Package macht \textit{linter-chktex} eine Live-Überprüfung des vorhandenen \latex-Codes möglich. So können Fehler und unsaubere Schreibweise schon vor dem Compile-Vorgang entdeckt und beseitigt werden.
