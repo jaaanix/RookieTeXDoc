@@ -173,21 +173,26 @@
 
 \chapter{Implementierung}
     \section{Implementierung der Generieung eines \latex-Projekts}
-        Um ein \latex-Projekt zu generieren, werden zunächst die in den Package-Settings gelesen. Dies geschieht mit den mitgelieferten Atom-API Funktionen. Auf Basis der ermittelten Angaben zur Einbindung von Glossar, Code Snippets und Projektpfad werden schließlich die zu erstellenden Datei in Form von String gespeichert. Sind alle Dateiinhalte zwischengespeichert, werden die benötigten Verzeichnisse und Datei mit Hilfe der Node.js Libraries \texttt{mkdirp} und \texttt{fs} erstellt. Dabei ist zu beachten, dass die Verzeichnisse synchron erstellt werden (Funktion: \texttt{mkdirp.sync(dir, opts)}). Das ist wichtig, da es sonst zur Laufzeit passieren kann, dass ein Unterverzeichnis parallel mit einem übergeordneten Verzeichnis erstellt wird, was einen Fehler und ein nicht korrekt erstelltes \latex-Projekt zur Folge hat.
+        Um ein \latex-Projekt zu generieren, werden zunächst die Package-Settings eingelesen. Dies geschieht mit mitgelieferten Atom-API Funktionen. Auf Basis der ermittelten Angaben zur Einbindung von Glossar, Code Snippets und Projektpfad werden schließlich die zu erstellenden Dateien in Form von Strings gespeichert. Sind alle Dateiinhalte zwischengespeichert, werden die benötigten Verzeichnisse und Dateien mit Hilfe der Node.js Libraries \texttt{mkdirp} und \texttt{fs} erstellt. Dabei ist zu beachten, dass die Verzeichnisse synchron erstellt werden (Funktion: \texttt{mkdirp.sync(dir, opts)}). Das ist wichtig, da es sonst zur Laufzeit passieren kann, dass ein Unterverzeichnis parallel mit einem übergeordneten Verzeichnis erstellt wird, was einen Fehler und ein nicht korrekt erstelltes \latex-Projekt zur Folge hat.
         \\
-        Damit die genutzten JavaScript Libraries dem Nutzer auch dann zur Verfügung stehen wenn diese nicht manuell installiert wurden, sind diese in der Package-Konfigurationsdatei \texttt{package.json} eingebunden (Siehe Listing 2). In den \textit{dependencies} wird der Name der Library, gefolgt von der benötigten Version angegeben. Im Falle der Package-Installation werden dieses Libraries dann automatisch installiert. 
-
-        \begin{itemize}
-          \item genutzte javascript bibliotheken
-          \item wie eingebunden
-          \item synchrones erstellen von verzeichnisen und dateien
-        \end{itemize}
+        Damit die genutzten JavaScript Libraries dem Nutzer auch dann zur Verfügung stehen wenn diese nicht manuell installiert werden, sind diese in der Package-Konfigurationsdatei \texttt{package.json} eingebunden (Siehe Listing 2). In den \textit{dependencies} wird der Name der Library, gefolgt von der benötigten Version angegeben. Im Falle der Package-Installation werden dieses Libraries dann automatisch installiert.
 
     \section{Implementierung der Konvertierung von Plain Text Listen}
-        TODO: Erklärung
-        \begin{itemize}
-          \item regex und regex syntax
-        \end{itemize}
+        Um bereits vorhandene Listen in \latex-Syntax zu konvertieren, wird zunächst der im Editor selektierte Text eingelesen und zwischengespeichert. Das einlesen selbst ist allein durch Atom-API Funktionen realisiert. Ist bei Funktionsaufruf kein Text selektiert, wird der Anwender mit Hilfe der JavaScript Funktion \texttt{alert} darüber informiert. Auch wenn der selektierte Text keine kompatible Liste enthält, wird der Benutzer in Form eines Popups informiert. Um die genannten Fälle erkennen zu können, werden zwei verschiedene Regex-Muster auf den eingelesenen Text angewendet. Hat nun kein Regex-Muster eine Übereinstimmung erkannt, kann keine \latex-Liste generiert werden. Für den Fall das eins der beiden Regex-Muster (entweder eine nummerierte Liste oder eine Liste mit Spiegelstrichen) Übereinstimmungen hat, wird der entsprechende \latex-Code zu einem String konkateniert und im Editor an stelle des zuvor selektierten Textes geschrieben.
+        \\
+        Die beiden Regex-Muster zu Erkennung der verschiedenen Listen sind folgendermaßen umgesetzt:
+        \\[5mm]
+        \begin{minipage}{\textwidth}
+            \centering
+            \begin{tabular}{ | c | c | }
+              \hline
+              \textbf{Listen-Typ} & \textbf{Regex-Muster} \\
+              \hline
+              Spiegelstrich-Liste & \texttt{'([-].+[\textbackslash n]){1,}', 'gm'} \\
+              nummerierte Liste & \texttt{'([0-9].+[\textbackslash n]){1,}', 'gm'} \\
+              \hline
+            \end{tabular}
+        \end{minipage}
     \section{Implementierung der Formatierung von Text}
         TODO: Erklärung
         \begin{itemize}
