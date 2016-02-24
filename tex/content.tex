@@ -101,6 +101,8 @@
                 \caption{Konvertierung einer Liste}
             \end{figure}
 
+            \begin{figure}[H]
+
             Vor und nach der Konvertierung einer ungeordneten Liste: \\[5mm]
             \begin{minipage}[c]{0.45\textwidth}
                 \begin{itemize}
@@ -142,6 +144,7 @@
                 \textbackslash{}end\{enumerate\}
                 }
             \end{minipage}
+            \end{figure}
 
         \subsection{Formatierung/Konvertierung von Text}
             Das RookieTeX Package kann bereits vorhandenen ausgewählten Text fett, kursiv oder unterstrichen formatieren. Ist der Text markiert wird über die Command Palette die gewünschte Formatierung ausgewählt.
@@ -204,6 +207,7 @@
     \section{Implementierung der Formatierung von Text}
         Ähnlich wie Konvertierung von Plain Text Listen zu \latex-Listen funktioniert auch das formatieren von ausgewählten Textabschnitten. Mit Hilfe von Atom-API Funktionen wird der markierte Text im Editor eingelesen und bearbeitet. Zur einfachen Formatierung sind in Gegensatz zur Listenkonvertierung jedoch keine Regex-Abgleichungen nötig. Um den Text ins \latex-Format zu überführen wird er mit der JavaScript Funktion \texttt{slice} bearbeitet, welche den markierten Text in die geschweiften Klammern des \latex-Befehls einfügt. Der zuvor selektierte Text wird anschließend durch den neu markierten Text ersetzt.
 
+    \newpage
     \section{Implementierung der Nutzung von Snippets über die Command Palette}
         Erkennt der Atom Editor im eingegebene Text ein Snippet wird dieses in Form einer Auswahlvorschau angezeigt.
         \begin{figure}[H]
