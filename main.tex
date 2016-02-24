@@ -1,12 +1,20 @@
-\documentclass[12pt]{article} 
- \usepackage{style} 
- \include{tex/glossary} 
- \begin{document} 
- \include{tex/title} 
- \tableofcontents 
- \listoffigures 
- \include{tex/content} 
- \glsaddall{} 
- \setglossarystyle{altlist} 
- \printglossaries{} 
+\documentclass[12pt]{article}
+ \usepackage{style}
+ \include{tex/glossary}
+ \newcites{Urls}{Verzeichnis der Internetquellen}
+ \begin{document}
+ \include{tex/title}
+% Inhaltsverzeichnis
+ \tableofcontents
+ \listoffigures
+% Content
+ \include{tex/content}
+% Glossar
+ \glsaddall{}
+ \setglossarystyle{altlist}
+ \printglossaries{}
+% Literaturverzeichnis
+ \bibliographystyleUrls{plain}
+ \nociteUrls{*}
+ \bibliographyUrls{BibliographyUrls}
  \end{document}
