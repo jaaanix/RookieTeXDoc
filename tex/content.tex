@@ -19,13 +19,13 @@
     Ebenso wie der Text-Editor selbst, sind auch die in Atom verfügbaren Packages (Plugins) in CoffeeScript bzw. JavaScript programmiert. Die Packages erweitern den Editor in seiner Funktionalität und werden sowohl von GitHub selber, so wie auch durch die Community erstellt und gepflegt.
 
     \section{Vergleichbare Editoren}
-    Zur Einordnung des Atom Editors sollen an dieser Stelle einige Alternativen genannt werden. Neben Atom gibt es einige Editoren mit ähnlichen Konzepten. Der proprietäre, häufig als Vorlage zu Atom genannte Edtior Sublime Text von Jon Skinner. Der für Webdesign optimierte open source Editor Brackets von Adobe System und der von Microsoft angebotene open source Code Editor Visual Studio Code. Jeder dieser hat eine ähnliche Erscheinung, unter anderem eine Konsole oder Command Palette, eine Baumansicht zur Datei und Verzeichnis Übersicht und verschiedene Designs. Ebenso werden für all diese Editoren Plugins bzw. Packages, also im allgemeinen Erweiterungen angeboten. Eine besondere Gemeinsamkeit habe Atom und der Visual Code Editor in ihrer Grundlage, beide Editoren sind mit dem von GitHub entwickelten Framework "`Electron"' entwickelt worden. "`Electron"' erlaubt es Desktop Applikationen mit dem Node.js Framework zu erstellen. 
+    Zur Einordnung des Atom Editors sollen an dieser Stelle einige Alternativen genannt werden. Neben Atom gibt es einige Editoren mit ähnlichen Konzepten. Der proprietäre, häufig als Vorlage zu Atom genannte Edtior Sublime Text von Jon Skinner. Der für Webdesign optimierte open source Editor Brackets von Adobe System und der von Microsoft angebotene open source Code Editor Visual Studio Code. Jeder dieser hat eine ähnliche Erscheinung, unter anderem eine Konsole oder Command Palette, eine Baumansicht zur Datei und Verzeichnis Übersicht und verschiedene Designs. Ebenso werden für all diese Editoren Plugins bzw. Packages, also im allgemeinen Erweiterungen angeboten. Eine besondere Gemeinsamkeit habe Atom und der Visual Code Editor in ihrer Grundlage, beide Editoren sind mit dem von GitHub entwickelten Framework "`Electron"' entwickelt worden. "`Electron"' erlaubt es Desktop Applikationen mit dem Node.js Framework zu erstellen.
 
 \part{Atom Packages}
 \section{Aufbau eines Atom Packages}
-    \begin{figure}[htbp]
+    \begin{figure}[H]
         \begin{minipage}{0.6\textwidth}
-            Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern.
+            Wird eine neues Package im Atom Editor angeleget, wird die in Abbildung \textit{Atom Package Struktur} gezeigte Verzeichnis- und Dateistruktur angelegt. Ausgenommen der Konfigurationsdateien \texttt{.eslintrrc.js, .gitattributes, .gitignore, .tern-project}, welche nachträglich hinzugefügt worden sind und die Entwicklung des Packages erleichtern. Das Grundgerüst und die Grundvoraussetzungen um eine neues Package mit Atom anzulegen sind also schon durch den Editor selbst gegeben.
         \end{minipage}
         \begin{minipage}{0.4\textwidth}
             \centering
@@ -34,8 +34,8 @@
         \end{minipage}
     \end{figure}
 
-    Die für das RookieTeX Package wichtigsten Verzeichnisse sind \texttt{lib} und \texttt{snippets}. Im Verzeichnis \texttt{lib}    befindet sich die Logik des Packages bestehend aus den Dateien: \\[5mm]
     \begin{minipage}{\textwidth}
+        Die für das RookieTeX Package wichtigsten Verzeichnisse sind \texttt{lib} und \texttt{snippets}. Im Verzeichnis \texttt{lib}    befindet sich die Logik des Packages bestehend aus den Dateien: \\[5mm]
         \begin{tabular}{ | c | p{0.7\textwidth} | }
             \hline
             \textbf{Dateiname} & \textbf{Zweck} \\
