@@ -58,7 +58,7 @@
     \\[5mm]
     \insertcode{src/example_snippet.cson}{\latex Snippet Beispiel (\latex Tabelle)}
 
-    Zeile 1 benennt das Snippet. Zeile 2 gibt das auslösende Prefix an, welches genutzt wird um das Snippet zu verwenden und Zeile 3 bis 8 spiegeln den bei Verwendung eingefügten Inhalt des Snippets wieder. Ein wichtiger Aspekt sind die in Zeile 5 und 6 zu sehenden Tab-Stops, welche nach dem Einfügen des Snippets-Body's dafür sorgen, dass der User mithilfe der Tab-Taste die Inhalte des \tex-Befehls füllen kann.
+    Zeile 1 benennt das Snippet. Zeile 2 gibt das auslösende Präfix an, welches genutzt wird um das Snippet zu verwenden und Zeile 3 bis 8 spiegeln den bei Verwendung eingefügten Inhalt des Snippets wieder. Ein wichtiger Aspekt sind die in Zeile 5 und 6 zu sehenden Tab-Stops, welche nach dem Einfügen des Snippets-Body's dafür sorgen, dass der User mithilfe der Tab-Taste die Inhalte des \tex-Befehls füllen kann.
     \\
     Des Weiteren wird in dieser Datei festgelegt welche Art von Dateien die enthaltenen Snippets auslösen/triggern können oder auch welche \textit{Scopes} die Snippets verwenden können. Im konkreten Fall von RookieTeX ist die Definition der unterstützten Formate/Scopes folgende: \texttt{'.text.plain, .text.latex':}. Es ist also bei der Bearbeitung von Plain Text oder \latex-Text möglich enthaltenen Snippets zu nutzen.
     \\
@@ -168,7 +168,7 @@
             \end{minipage}
 
         \subsection{Nutzung von Snippets über die Command Palette}
-            Neben der Aktivierung von Snippets mithilfe der Standardfunktionalität von Atom, also in dem spezifische Snippet Prefixe eingetippt werden, bietet RookieTeX die Möglichkeit Snippets über die Command Palette einzufügen. Die Command Palette dient dazu Befehle an den Editor abzusetzen. Durch bestimmte Befehle ermöglicht das Package nun \latex Snippets in den aktiven Editor-Tab an stelle des Cursors einzufügen. Der Zugriff auf Snippets über die Command Palette bietet den Vorteil, dass das Prefix des Snippets nicht bekannt sein muss, denn die Command Palette liefert ein Buchstaben-Matching innerhalb von Wörtern.
+            Neben der Aktivierung von Snippets mithilfe der Standardfunktionalität von Atom, also in dem spezifische Snippet Präfixe eingetippt werden, bietet RookieTeX die Möglichkeit Snippets über die Command Palette einzufügen. Die Command Palette dient dazu Befehle an den Editor abzusetzen. Durch bestimmte Befehle ermöglicht das Package nun \latex Snippets in den aktiven Editor-Tab an stelle des Cursors einzufügen. Der Zugriff auf Snippets über die Command Palette bietet den Vorteil, dass das Präfix des Snippets nicht bekannt sein muss, denn die Command Palette liefert ein Buchstaben-Matching innerhalb von Wörtern.
             \begin{figure}[H]
                 \centering
                     \includegraphics[scale=0.7]{img/snippets_via_cp.png}
@@ -217,7 +217,7 @@
         \end{figure}
         Im Normalfall wird das gewünschte Snippet dann direkt via Tab-Taste aktiviert oder erst per Pfeiltaste oder Maus ausgewählt und anschließend mit Enter bestätigt.
         \\
-        Um Snippets über die Command Palette einfügen zu können, wurde das Einfügen von Snippets aufgrund nicht vorhandener API Funktionen, welche das aktivieren eins Snippets ermöglichen nach einem ähnlichen Prinzip implementiert. Wird ein Snippet in der Command Palette gesucht und ausgewählt, fügt die Funktion \texttt{insertText} der Klasse \texttt{Editor} das zugehörige Prefix für das gewünschte Snippet ein. Unmittelbar danach wird durch die Funktion \texttt{buildKeydownEvent} der Klasse KeymapManager der ein Betätigend der Tab-Taste simuliert, wodurch das gewünschte Snippet eingefügt wird.
+        Um Snippets über die Command Palette einfügen zu können, wurde das Einfügen von Snippets aufgrund nicht vorhandener API Funktionen, welche das aktivieren eins Snippets ermöglichen nach einem ähnlichen Prinzip implementiert. Wird ein Snippet in der Command Palette gesucht und ausgewählt, fügt die Funktion \texttt{insertText} der Klasse \texttt{Editor} das zugehörige Präfix für das gewünschte Snippet ein. Unmittelbar danach wird durch die Funktion \texttt{buildKeydownEvent} der Klasse KeymapManager der ein Betätigend der Tab-Taste simuliert, wodurch das gewünschte Snippet eingefügt wird.
 
     \section{Hindernisse und Probleme bei der Entwicklung von RookieTeX}
         In der Zeit der Entwicklung des Packages hat der Atom Editor vier Versions Updates bekommen, angefangen mit Version 1.4.0 und aktuell mit Version 1.5.3 (Stand: 18.02.2016). Parallel zu diesen Updates wird die Atom API (\href{https://www.atom.io/docs/api/}{Atom API Link}) gepflegt. Auffällig ist die sehr unterschiedliche Detailtiefe der API, während eine Klasse bis ins Detail beschrieben sind und auch Code Beispiele vorliegen, sind andere Klasse nur sehr knapp beschrieben und bieten keine Beispiele an. Teilweise wird somit die Implementierung eines Packages sehr erschwert, da häufig Community Foren oder Packages von anderen Entwickler herangezogen werden müssen, um Code Beispiele einzusehen.
@@ -229,6 +229,6 @@
         \subsection{language-latex}
             Das \textit{language-latex} Package sorgt dafür das ein Syntax-Highlighting von \latex-Code im Editor stattfindet. \latex-Befehle werden also farblich hervorgehoben und sind leichter erkennbar. Im Atom Editor lässt sich die aktuelle Sprache dann über die standardmäßige Tastenkombination \texttt{Strg-Shift-L} die Sprache \latex auswählen. Dokumente mit der Dateiendung \texttt{.tex} werden außerdem automatisch erkannt.
         \subsection{latex}
-            Das \textit{latex} Package erlaubt es dem Benutzer bei installierem \latex-Compiler, \texttt{.tex}-Dateien aus dem Editor heraus zu kompilieren.
+            Das \textit{latex} Package erlaubt es dem Benutzer bei installiertem \latex-Compiler, \texttt{.tex}-Dateien aus dem Editor heraus zu kompilieren.
         \subsection{linter-chktex}
             In Kombination mit dem \textit{linter} Package macht \textit{linter-chktex} eine Live-Überprüfung des vorhandenen \latex-Codes möglich. So können Fehler und unsaubere Schreibweise schon vor dem Compile-Vorgang entdeckt und beseitigt werden.
